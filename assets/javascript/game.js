@@ -6,15 +6,16 @@ var winsText = document.getElementById("wins");
 var losesText = document.getElementById("loses");
 var endText = document.getElementById("end");
 
-var words = ["rocky road", "vanilla", "chocolate chip", "cotton candy",
-    "moose tracks", "fudge swirl", "superhero", "chocolate", "strawberry"];
+var words = ["banana", "blackberry", "pineapple", "raspberry",
+    "mango", "tomato", "dragonberry", "passionfuit", "strawberry"];
 
-var guessesLeft = 15;
+var guessesLeft = 10;
 var numWin = 0;
 var numLose = 0;
 var wordIndex = Math.floor((Math.random() * words.length));
 var lettersGuessed = [];
 var blanks = [];
+var gameActive = true;
 
 var printBlanks = function () {
     for (var i = 0; i < words[wordIndex].length; i++) {
@@ -34,6 +35,8 @@ var printBlanks = function () {
     lettersGuessedText.textContent = lettersGuessed.join(", ");
     winsText.textContent = "Wins: " + numWin;
     losesText.textContent = "Loses: " + numLose;
+    endText.textContent = "";
+    gameActive = true;
 }
 
 printBlanks();
@@ -42,7 +45,7 @@ printBlanks();
 document.onkeyup = function (event) {
     var userGuess = event.key;
 
-    if ((/^[a-z]/.test(userGuess)) && (userGuess.length == 1)) {
+    if ((/^[a-z]/.test(userGuess)) && (userGuess.length == 1) && (gameActive === true)) {
         if (words[wordIndex].includes(userGuess)) {
             console.log(userGuess + " yes")
             for (var i = 0; i < words[wordIndex].length; i++) {
@@ -64,21 +67,26 @@ document.onkeyup = function (event) {
             }
         }
         if ((words[wordIndex] == blanks.join("")) && (guessesLeft >= 0)) {
+            endText.textContent = "Great Job! You win!"
             numWin++;
+            gameActive = false;
             wordIndex = Math.floor((Math.random() * words.length));
             blanks = [];
             lettersGuessed = [];
-            guessesLeft = 15;
-            printBlanks();
+            guessesLeft = 10;
+            setTimeout(printBlanks, 2000);
         }
 
-        if ((guessesLeft < 0) && !(words[wordIndex] == blanks.join(""))) {
+        if ((guessesLeft <= 0) && !(words[wordIndex] == blanks.join(""))) {
+            endText.textContent = "You did not guess correctly. The ice cream flavor was " + words[wordIndex];
             numLose++;
+            gameActive = false;
             wordIndex = Math.floor((Math.random() * words.length));
             blanks = [];
             lettersGuessed = [];
-            guessesLeft = 15;
-            printBlanks();
+            guessesLeft = 10;
+            setTimeout(printBlanks, 2000);
         }
     }
 }
+
