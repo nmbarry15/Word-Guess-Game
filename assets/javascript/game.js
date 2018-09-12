@@ -9,7 +9,7 @@ var endText = document.getElementById("end");
 //set variables
 var words = ["banana", "blackberry", "pineapple", "raspberry",
     "mango", "tomato", "dragonberry", "passionfuit", "strawberry",
-    "apple", "grapes", "melon", "kiwi", "coconut"];
+    "apple", "grapes", "melon", "kiwi", "coconut", "pomagranate"];
 
 var guessesLeft = 10;
 var numWin = 0;
