@@ -4,33 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
     <title>Hangman</title>
 </head>
 
-<body>
+<body class="bg-light">
 
-    <div><h1>Hangman</h1></div>
+    <div class="card text-center bg-light border-light">
+        <div class="card-header bg-success text-white">
+            <h1>Hangman</h1>
+        </div>
+        <div class="card-body bg-light text-success">
+            <h5 class="card-title">Directions: Press any letter to guess the fruit!</h5>
+            <br>
+            <div class="card-text" id="wordToGuess"> </div>
+            <br>
+            <div class="card-text" id="numGuesses"> </div>
+            <br>
+            <div>You have guessed: <span id="letterGuesses"></span></div>
+            <br>
+            <div class="card-text" id="wins"> </div>
+            <br>
+            <div class="card-text" id="loses"> </div>
+            <br>
+            <div class="card-text" id="end"></div>
+        </div>
+    </div>
 
-    <div>Directions: Press any letter to guess the fruit!</div>
-    <br>
-    <div id="wordToGuess"> </div>
-    <br>
-
-    <div id="numGuesses"> </div>
-    <br>
-
-    <div>You have guessed: <span id="letterGuesses"></span></div>
-    <br>
-
-    <div id="wins"> </div>
-    <br>
-    <div id="loses"> </div>
-    <br>
-    <div id="end"></div>
 
     <script src="assets/javascript/game.js"></script>
 
