@@ -8,32 +8,50 @@
         crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Word Guess Game</title>
+    <style>
+        body {
+            background-image: url("assets/images/fruit-wallpaper.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
-
-    <title>Hangman</title>
+        .card {
+            opacity: .9;
+        }
+    </style>
 </head>
 
-<body class="bg-light">
+<body>
+    <div class="row">
+        <br><br>
+    </div>
 
-    <div class="card text-center bg-light border-light">
-        <div class="card-header bg-success text-white">
-            <h1>Hangman</h1>
+    <div class="row">
+        <div class="card text-center bg-light border-light m-auto b-0">
+            <div class="card-header bg-success text-white">
+                <h1>Word Guess Game</h1>
+            </div>
+            <div class="card-body bg-light text-success">
+                <h5 class="card-title">Directions: Press any letter to guess the fruit!</h5>
+                <br>
+                <div class="card-text" id="wordToGuess"> </div>
+                <br>
+                <div class="card-text" id="numGuesses"> </div>
+                <br>
+                <div>You have guessed: <span id="letterGuesses"></span></div>
+                <br>
+                <div class="card-text" id="wins"> </div>
+                <br>
+                <div class="card-text" id="loses"> </div>
+                <br>
+                <div class="card-text" id="end"></div>
+            </div>
         </div>
-        <div class="card-body bg-light text-success">
-            <h5 class="card-title">Directions: Press any letter to guess the fruit!</h5>
-            <br>
-            <div class="card-text" id="wordToGuess"> </div>
-            <br>
-            <div class="card-text" id="numGuesses"> </div>
-            <br>
-            <div>You have guessed: <span id="letterGuesses"></span></div>
-            <br>
-            <div class="card-text" id="wins"> </div>
-            <br>
-            <div class="card-text" id="loses"> </div>
-            <br>
-            <div class="card-text" id="end"></div>
-        </div>
+    </div>
+
+    <div class="row">
+        <br><br>
     </div>
 
 

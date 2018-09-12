@@ -8,7 +8,8 @@ var endText = document.getElementById("end");
 
 //set variables
 var words = ["banana", "blackberry", "pineapple", "raspberry",
-    "mango", "tomato", "dragonberry", "passionfuit", "strawberry"];
+    "mango", "tomato", "dragonberry", "passionfuit", "strawberry",
+    "apple", "grapes", "melon", "kiwi", "coconut"];
 
 var guessesLeft = 10;
 var numWin = 0;
@@ -46,7 +47,7 @@ gameReset();
 
 document.onkeyup = function (event) {
     var userGuess = event.key;
-    
+
     //make sure key pressed is a letter and one char long
     if ((/^[a-z]/.test(userGuess)) && (userGuess.length == 1) && (gameActive === true)) {
         //check if word includes char guessed
